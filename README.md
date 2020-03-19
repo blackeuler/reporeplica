@@ -39,6 +39,6 @@ After that last command a webserver will start at localhost:5000 if you go to th
 ## How it Works
 
 This application is a flask application. Flask is a micro-webframework written in python. It allows you to start servers and build websites
-using only the things you need. Our flask app uses an open source library for handling OAuth with Github called [Authlib](https://authlib.org). 
+using only a small amount of tools.You then have the option of adding more functionality as your application needs them. You can learn more about flask [here](https://flask.palletsprojects.com/en/1.1.x/) Our flask app uses an open source library for handling OAuth with Github called [Authlib](https://authlib.org). 
 Using OAuth the user goes to our link and then starts the authentication process with Github, the permission the app asks for is read/write acces to public repos. Once we have the authentication token from github we utilize the [Github API](https://developer.github.com/v3/) to then fork this repository in the authenticated users account thus replicated this repo.
 
