@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask, url_for 
 from authlib.integrations.flask_client import OAuth
 from os import getenv,urandom
 
@@ -8,9 +8,10 @@ app.config.update(SECRET_KEY=urandom(24))
 oauth = OAuth(app)
 
 clientId = getenv("CLIENT_ID")
-clientSecret = getenv("ClIENT_SECRET")
+clientSecret = getenv("CLIENT_SECRET")
 
-
+print(clientId)
+print(clientSecret)
 oauth.register(
     name='github',
     client_id=clientId,
@@ -24,4 +25,11 @@ oauth.register(
 
 @app.route('/')
 def index():
-    return 'Hello World'
+    redirect_uri = url_for('replicated', _external=True)
+    return oauth.github.authorize_redirect(redirect_uri)
+
+@app.route('/replicated')
+def replicated():
+    token = oauth.github.authorize_access_token()
+    resp = oauth.github.post('repos/huangs1/Simple-Dungeon-Crawler-Game/forks')
+    return 'Repository Replicated'
