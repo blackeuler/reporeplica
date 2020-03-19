@@ -4,6 +4,8 @@
 
 This application can be used to create a link to duplicate this repository in any github users account by going to the link that points to this repo.
 
+Here is a deployed heroku link for the application: [link](https://reporeplica.herokuapp.com/)
+
 ## Dependecies
 Python 3.7
 
@@ -35,6 +37,17 @@ flask run
 
 ```
 After that last command a webserver will start at localhost:5000 if you go to that link it will then replicate this repo in your github account.
+
+## Deploy
+While there are many ways to deploy a flask application I believe the easiest is [Heroku](http://heroku.com/).
+You can make an account there and it will link to your github account. You can deploy directly from the repository.
+In order to make the application work you need to set the environemnt variables in your heroku project just like in the local installation.
+
+Another thing that needs to be changed is in your github settings once Heroku gives you a domain name you will either need to register a new
+application with Github or you will need to change the Homepage URL and the Authorization Callback URL to match the URL that heroku will give you.
+You need a CLIENT_ID, and CLIENT_SECRET. Once you have those environement variables set the application will run as expected.
+
+
 
 ## How it Works
 
