@@ -1,4 +1,4 @@
-from flask import Flask, url_for 
+from flask import Flask, url_for, render_template 
 from authlib.integrations.flask_client import OAuth
 from os import getenv,urandom
 
@@ -30,4 +30,6 @@ def index():
 def replicated():
     token = oauth.github.authorize_access_token()
     resp = oauth.github.post('repos/blackeuler/reporeplica/forks')
-    return 'Repository Replicated'
+    resp2 = oauth.github.get('user').json()
+    baseLink = resp2['html_url']
+    return render_template('replicated.html',link = f'{baseLink}/reporeplica' )

@@ -15,7 +15,7 @@ Prior to following these steps ensure that you have python 3.7 installed on your
 You will also have to register an application with github.You can do that [here](https://github.com/settings/applications/new) .
 When registering your new application you want to make your Homepage URL localhost:5000 and your Authorization callback URL localhost:5000/replicated
 
-### Local Installation Instructions
+### Local Installation Instructions(Linux/Mac)
 
 ```sh
 # Let's clone this repository
