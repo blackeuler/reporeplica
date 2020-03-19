@@ -1,8 +1,9 @@
 from flask import Flask 
 from authlib.integrations.flask_client import OAuth
-from os import getenv
+from os import getenv,urandom
 
 app = Flask(__name__)
+app.config.update(SECRET_KEY=urandom(24))
 
 oauth = OAuth(app)
 
