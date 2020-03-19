@@ -10,8 +10,6 @@ oauth = OAuth(app)
 clientId = getenv("CLIENT_ID")
 clientSecret = getenv("CLIENT_SECRET")
 
-print(clientId)
-print(clientSecret)
 oauth.register(
     name='github',
     client_id=clientId,
