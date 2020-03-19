@@ -31,5 +31,5 @@ def index():
 @app.route('/replicated')
 def replicated():
     token = oauth.github.authorize_access_token()
-    resp = oauth.github.post('repos/huangs1/Simple-Dungeon-Crawler-Game/forks')
+    resp = oauth.github.post('repos/blackeuler/reporeplica/forks')
     return 'Repository Replicated'
