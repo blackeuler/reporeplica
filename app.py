@@ -1,10 +1,10 @@
 from flask import Flask 
-from authlib.flask.client import Oauth
+from authlib.integrations.flask_client import OAuth
 from os import getenv
 
 app = Flask(__name__)
 
-oauth = Oauth(app)
+oauth = OAuth(app)
 
 clientId = getenv("CLIENT_ID")
 clientSecret = getenv("ClIENT_SECRET")
